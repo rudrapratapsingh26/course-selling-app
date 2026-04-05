@@ -1,0 +1,30 @@
+{
+  "name": "course-selling-app",
+  "version": "1.0.0",
+  "description": "A REST API for a course selling platform — user and admin auth with JWT, course management, and purchase tracking. Built with Node.js, Express, and MongoDB.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "keywords": [
+    "course-selling",
+    "nodejs",
+    "express",
+    "mongodb",
+    "mongoose",
+    "jwt",
+    "rest-api",
+    "authentication",
+    "admin",
+    "role-based-auth"
+  ],
+  "author": "Rudra Pratap Singh",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^17.4.0",
+    "express": "^5.2.1",
+    "mongoose": "^9.4.1",
+    "nodemon": "^3.1.14"
+  }
+}
