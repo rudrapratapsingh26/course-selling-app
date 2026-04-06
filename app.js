@@ -1,5 +1,5 @@
 import express from "express";
-import { ApiResponse } from "./utils/ApiResponse.js";
+import { ApiResponse } from "./src/utils/api-response.js";
 import userRoutes from "./routes/userRoutes.js";
 
 const app = express();

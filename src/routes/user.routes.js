@@ -2,11 +2,9 @@ import { Router } from "express";
 import {
   registerUser,
   loginUser,
-  logoutUser,
-  refreshAccessToken,
+  getPurchases,
 } from "../controllers/user.controllers.js";
-import { verifyJWT } from "../middleware/auth.middleware.js";
-
+import { userMiddleware } from "../middleware/user.middlewares.js";
 const router = Router();
 
 router.post("/register", registerUser);
