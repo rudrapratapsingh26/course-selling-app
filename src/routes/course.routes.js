@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { userMiddleware } from "../middleware/user.middleware.js";
+import { userMiddleware } from "../middlewares/user.middlewares.js";
 import {
   getAllCourses,
   purchaseCourse,

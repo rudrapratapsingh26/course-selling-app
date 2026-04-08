@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { adminMiddleware } from "../middleware/admin.middleware.js";
+import { adminMiddleware } from "../middlewares/admin.middlewares.js";
 import {
   registerAdmin,
   loginAdmin,
