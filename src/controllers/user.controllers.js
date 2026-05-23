@@ -6,9 +6,14 @@ import { ApiResponse } from "../utils/api-response.js";
 import { asyncHandler } from "../utils/async-handler.js";
 
 export const registerUser = asyncHandler(async (req, res) => {
-  const { username, email, password } = req.body;
-  if (!username || !email || !password) {
-    throw new ApiError(400, "All fields are required");
+  const { firstName, lastName, username, email, password } = req.body;
+  const resolvedFirstName = firstName || username;
+
+  if (!resolvedFirstName || !lastName || !email || !password) {
+    throw new ApiError(
+      400,
+      "firstName, lastName, email and password are required"
+    );
   }
 
   const existingUser = await User.findOne({ email });
@@ -16,7 +21,12 @@ export const registerUser = asyncHandler(async (req, res) => {
     throw new ApiError(409, "Email already in use");
   }
 
-  const user = await User.create({ username, email, password });
+  const user = await User.create({
+    firstName: resolvedFirstName,
+    lastName,
+    email,
+    password,
+  });
   return res
     .status(201)
     .json(
